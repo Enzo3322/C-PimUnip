@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <string.h>
-#include <stdio.h>  //armazena informações de entrada e saida
+#include <stdio.h>  
+
 void menu(int i) {
     switch(i) {
         case 1:
@@ -11,7 +12,7 @@ void menu(int i) {
             printf("          ██╔═══╝ ██║██║╚██╔╝██║    ██╔══██║██║  ██║╚════██║  \n");
             printf("          ██║     ██║██║ ╚═╝ ██║    ██║  ██║██████╔╝███████║  \n");
             printf("          ╚═╝     ╚═╝╚═╝     ╚═╝    ╚═╝  ╚═╝╚═════╝ ╚══════╝  \n");
-            
+
             printf("╔══════════════════════════════════════════════════════════════════════╗ \n");
             printf("║                                                                      ║ \n");
             printf("║                     GESTAO DE TAREFAS OLIMPIADAS                     ║ \n");
@@ -19,8 +20,11 @@ void menu(int i) {
             printf("╠══════════════════════════════════════════════════════════════════════╣ \n");
             printf("║                                                                      ║ \n");
             printf("║                 1 - Cadastrar Atletas                                ║ \n");
+            printf("║                                                                      ║ \n");
             printf("║                 2 - Cadastrar Cadastrar Equipe                       ║ \n");
+            printf("║                                                                      ║ \n");
             printf("║                 3 - Exibir Atletas Cadastrados                       ║ \n");
+            printf("║                                                                      ║ \n");
             printf("║                 4 - Exibir Membros de Equipe Cadastrados             ║ \n");
             printf("║                                                                      ║ \n");
             printf("╚══════════════════════════════════════════════════════════════════════╝ \n\n");
@@ -54,24 +58,20 @@ void cadastroAtleta() {
     fgets(name,100,stdin);
     printf("║\n");
 
-    
     printf("Modalidade: \n");
     scanf("%c",&temp);
     fgets(modality,100,stdin);
     printf("\n");
 
-    
     printf("Pais de Origem: \n");
     scanf("%c",&temp);
     fgets(origincountry,100,stdin);
     printf("\n");
 
-
     printf("Nome da Equipe Olimipica do atleta: \n");
     scanf("%c",&temp);
     fgets(teamname,100,stdin);
     printf("\n");
-
 }
 
 
@@ -90,30 +90,25 @@ void cadastroEquipe() {
     fgets(traininglocal,100,stdin );
     printf("\n");
 
-
     printf("Data do Treinamento:  EX: 11/10/2021 \n");
     scanf("%c",&temp);
     fgets(trainingdate,100,stdin);
     printf("\n");
 
-
     printf("Local da Compenticao:\n");
     scanf("%c",&temp);
     fgets(competitionplace,100,stdin);
     printf("\n");
-
     
     printf("Equipamentos Necessarios:\n");
     scanf("%c",&temp);
     fgets(outfit,100,stdin);
     printf("\n");
 
-
     printf("Alojamento da Delegacao:\n");
     scanf("%c",&temp);
     fgets(accommodationofteam,100,stdin);
     printf("\n");
-
     
     menu(2);
 
@@ -132,9 +127,7 @@ void listEquipe() {
 
 void main () {
     menu(1);
-
     int selected;
-
     scanf("%d", &selected);
 
     switch(selected){
@@ -148,6 +141,5 @@ void main () {
             break;
         default : printf("Selecione uma opcao válida");
     }
-
     system("pause");
 }
