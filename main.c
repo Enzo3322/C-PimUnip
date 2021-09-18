@@ -1,36 +1,41 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>  //armazena informações de entrada e saida
-
-
 void menu(int i) {
     switch(i) {
         case 1:
             system("clear");
-            printf("|======================================================================| \n");
-            printf("|                                                                      | \n");
-            printf("|                     GESTAO DE TAREFAS OLIMPIADAS                     | \n");
-            printf("|                             MENU DE OPCOES                           | \n");
-            printf("|----------------------------------------------------------------------| \n");
-            printf("|                                                                      | \n");
-            printf("|                 1 - Cadastrar Atletas                                | \n");
-            printf("|                 2 - Cadastrar Cadastrar Equipe                       | \n");
-            printf("|                 3 - Exibir Atletas Cadastrados                       | \n");
-            printf("|                 4 - Exibir Membros de Equipe Cadastrados             | \n");
-            printf("|                                                                      | \n");
-            printf("|======================================================================| \n\n");
+            printf("          ██████╗ ██╗███╗   ███╗     █████╗ ██████╗ ███████╗  \n");
+            printf("          ██╔══██╗██║████╗ ████║    ██╔══██╗██╔══██╗██╔════╝  \n");
+            printf("          ██████╔╝██║██╔████╔██║    ███████║██║  ██║███████╗  \n");
+            printf("          ██╔═══╝ ██║██║╚██╔╝██║    ██╔══██║██║  ██║╚════██║  \n");
+            printf("          ██║     ██║██║ ╚═╝ ██║    ██║  ██║██████╔╝███████║  \n");
+            printf("          ╚═╝     ╚═╝╚═╝     ╚═╝    ╚═╝  ╚═╝╚═════╝ ╚══════╝  \n");
+            
+            printf("╔══════════════════════════════════════════════════════════════════════╗ \n");
+            printf("║                                                                      ║ \n");
+            printf("║                     GESTAO DE TAREFAS OLIMPIADAS                     ║ \n");
+            printf("║                             MENU DE OPCOES                           ║ \n");
+            printf("╠══════════════════════════════════════════════════════════════════════╣ \n");
+            printf("║                                                                      ║ \n");
+            printf("║                 1 - Cadastrar Atletas                                ║ \n");
+            printf("║                 2 - Cadastrar Cadastrar Equipe                       ║ \n");
+            printf("║                 3 - Exibir Atletas Cadastrados                       ║ \n");
+            printf("║                 4 - Exibir Membros de Equipe Cadastrados             ║ \n");
+            printf("║                                                                      ║ \n");
+            printf("╚══════════════════════════════════════════════════════════════════════╝ \n\n");
         break;
         case 2:
             system("clear");
-            printf("|======================================================================| \n");
-            printf("|                                                                      | \n");
-            printf("|                     GESTAO DE TAREFAS OLIMPIADAS                     | \n");
-            printf("|                             MENU DE OPCOES                           | \n");
-            printf("|----------------------------------------------------------------------| \n");
-            printf("|                                                                      | \n");
-            printf("|                 1 - Voltar ao menu inicial.                          | \n");
-            printf("|                                                                      | \n");
-            printf("|======================================================================| \n\n");
+            printf("╔══════════════════════════════════════════════════════════════════════╗ \n");
+            printf("║                                                                      ║ \n");
+            printf("║                     GESTAO DE TAREFAS OLIMPIADAS                     ║ \n");
+            printf("║                             MENU DE OPCOES                           ║ \n");
+            printf("╠══════════════════════════════════════════════════════════════════════╣ \n");
+            printf("║                                                                      ║ \n");
+            printf("║                 1 - Voltar ao menu Inicial                           ║ \n");
+            printf("║                                                                      ║ \n");
+            printf("╚══════════════════════════════════════════════════════════════════════╝ \n\n");
         break;
     }
 }
@@ -43,10 +48,11 @@ char teamname[100];
 char temp;
 
 void cadastroAtleta() {
-    printf("Nome do Atleta:\n ");
+    printf("════════════════════════════════════════════════════════════════════════\n");
+    printf(" Nome do Atleta:            \n");
     scanf("%c",&temp);
     fgets(name,100,stdin);
-    printf("\n");
+    printf("║\n");
 
     
     printf("Modalidade: \n");
@@ -83,7 +89,7 @@ void cadastroEquipe() {
     scanf("%c",&temp);
     fgets(traininglocal,100,stdin );
     printf("\n");
-    
+
 
     printf("Data do Treinamento:  EX: 11/10/2021 \n");
     scanf("%c",&temp);
@@ -107,6 +113,9 @@ void cadastroEquipe() {
     scanf("%c",&temp);
     fgets(accommodationofteam,100,stdin);
     printf("\n");
+
+    
+    menu(2);
 
 }
 
@@ -142,5 +151,3 @@ void main () {
 
     system("pause");
 }
-
-  
