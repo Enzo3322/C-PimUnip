@@ -56,7 +56,7 @@ void cadastroAtleta() {
     printf(" Nome do Atleta:            \n");
     scanf("%c",&temp);
     fgets(name,100,stdin);
-    printf("║\n");
+    printf("\n");
 
     printf("Modalidade: \n");
     scanf("%c",&temp);
