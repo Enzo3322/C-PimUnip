@@ -90,17 +90,26 @@ int registerTeam() {
   return 1;
 }
 
-int listAtleta() {
-  printf("Listar Atleta");
+int listAthlete() {
+  printf("╔══════════════════════════════════════════════════════════════════════╗ \n");
+  printf("║                                                                      ║ \n");
+  printf("║                     LISTA DE ATLETAS CADASTRADOS                     ║ \n");
+  printf("║                                                                      ║ \n");
+  printf("╚══════════════════════════════════════════════════════════════════════╝ \n\n");
   printf("%s", name);
   printf("%s", modality);
   printf("%s", originCountry);
   printf("%s", teamName);
+
   return 1;
 }
 
 int listTeam() {
-  printf("Listar Equipe\n");
+  printf("╔══════════════════════════════════════════════════════════════════════╗ \n");
+  printf("║                                                                      ║ \n");
+  printf("║                      LISTA DE EQUIPES CADASTRADAS                    ║ \n");
+  printf("║                                                                      ║ \n");
+  printf("╚══════════════════════════════════════════════════════════════════════╝ \n\n");
   printf("%s", trainingLocal);
   printf("%s", trainingDate);
   printf("%s", competitionPlace);
@@ -110,7 +119,7 @@ int listTeam() {
 }
 
 int menu() {
-  // system("clear");
+  system("clear");
   printf("╔══════════════════════════════════════════════════════════════════════╗ \n");
   printf("║                                                                      ║ \n");
   printf("║                     GESTÃO DE TAREFAS OLIMPÍADAS                     ║ \n");
@@ -138,7 +147,7 @@ int menu() {
     r = registerTeam();
     break;
   case 3:
-    r = listAtleta();
+    r = listAthlete();
     break;
   case 4:
     r = listTeam();
@@ -173,7 +182,10 @@ void handleLogin() {
   if (strcmp(log, log1) == 0 && strcmp(pw, pw1) == 0) {
     menu();
   } else {
-    printf("\n             DADOS INVALIDOS!\n\n");
+    system("clear");
+    printf("\n                       DADOS INVALIDOS! TENTE NOVAMENTE\n\n");
+    handleLogin();
+
   }
 }
 
