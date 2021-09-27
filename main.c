@@ -15,8 +15,9 @@ char trainingDate[100];
 char competitionPlace[100];
 char outfit[100];
 char accommodationOfTeam[100];
-// ======================================================================= ===//
+// =========================================================================//
 
+// ====================          DONE            ====================//
 int registerAthlete() {
   system("clear");
   printf("|-----------------------------------------------| \n");
@@ -41,6 +42,50 @@ int registerAthlete() {
   return 1;
 }
 
+// ====================          TODO            ====================//
+int registerPosition() {
+  system("clear");
+  printf("|-----------------------------------------------| \n");
+  printf("|                                               | \n");
+  printf("|             CADASTRO DE MEDALHAS              | \n");
+  printf("|                                               | \n");
+  printf("|-----------------------------------------------| \n");
+  printf("|                                               | \n");
+  printf("|  SELECIONE O PAIS PARA ATRIBUIR AS PONTUACAO  | \n");
+  printf("|                                               | \n");
+  printf("|    1 - BRASIL                                 | \n");
+  printf("|                                               | \n");
+  printf("|    2 - ESTADOS UNIDOS                         | \n");
+  printf("|                                               | \n");
+  printf("|    3 - JAPAO                                  | \n");
+  printf("|                                               | \n");
+  printf("|    4 - ITALIA                                 | \n");
+  printf("|                                               | \n");
+  printf("|    5 - RUSSIA                                 | \n");
+  printf("|                                               | \n");
+  printf("|-----------------------------------------------| \n");
+
+  int r = 0;
+  int selected;
+  scanf("%i", & selected);
+  switch (selected) {
+  case 1: r = registerAthlete();
+    break;
+  case 2: r = registerTeam();
+    break;
+  case 3: r = listAthlete();
+    break;
+  case 4: r = listTeam();
+    break;
+  case 5: r = registerPosition();
+    break;
+  default: r = 0;
+    printf("Selecione uma opcao valida \n\n");
+  }
+  menu();
+}
+
+// ====================          DONE            ====================//
 int registerTeam() {
   system("clear");
   printf("|-----------------------------------------------| \n");
@@ -68,35 +113,24 @@ int registerTeam() {
   return 1;
 }
 
+// ====================          DONE            ====================//
 int listAthlete() {
-   system("clear");
-  printf("|-----------------------------------------------| \n");
-  printf("|                                               | \n");
-  printf("|         LISTA DE ATLETAS CADASTRADOS          | \n");
-  printf("|                                               | \n");
-  printf("|-----------------------------------------------| \n");
+  system("clear");
+  printf("|----------------------------------------------------| \n");
+  printf("|                                                    | \n");
+  printf("|             LISTA DE ATLETAS CADASTRADOS           | \n");
+  printf("|                                                    | \n");
+  printf("|----------------------------------------------------| \n");
   printf("|\tNOME\tMODALIDADE\tPAIS\tEQUIPE\t \n");
   printf("|\t%s", name);
   printf("\t%s", modality);
   printf("\t\t%s", originCountry);
   printf("\t%s", teamName);
   printf("\n\n");
-  
-  float i;
-  printf("Digite 1 para continuar\n");
-  printf("Digite 2 para cadastrar um novo atleta\n");
-  scanf("%s", i);
-
-  if(i == 1){
-    return 1;
-  }else if(i == 2) {
-    return registerAthlete();
-  }else {
-    return 0;
-  }
   return 1;
 }
 
+// ====================          DONE            ====================//
 int listTeam() {
   system("clear");
   printf("|-----------------------------------------------| \n");
@@ -109,20 +143,10 @@ int listTeam() {
   printf("%s\n", competitionPlace);
   printf("%s\n", outfit);
   printf("%s\n\n", accommodationOfTeam);
-
-  float i;
-  printf("\nDigite 1 para continuar\n");
-  printf("Digite 2 para cadastrar um novo atleta\n");
-  scanf("%s", i);
-  if(i == 1){
-    return 1;
-  }else if(i == 2) {
-    return registerAthlete();
-  }else {
-    return 0;
-  }
+  return 1;
 }
 
+// ====================          DONE            ====================//
 int menu() {
   system("clear");
   printf("|-----------------------------------------------| \n");
@@ -140,6 +164,8 @@ int menu() {
   printf("|                                               | \n");
   printf("|    4 - Exibir Membros de Equipe Cadastrados   | \n");
   printf("|                                               | \n");
+  printf("|    5 - Cadastro de pontuacao                  | \n");
+  printf("|                                               | \n");
   printf("|-----------------------------------------------| \n");
   int r = 0;
   int selected;
@@ -153,12 +179,15 @@ int menu() {
     break;
   case 4: r = listTeam();
     break;
+  case 5: r = registerPosition();
+    break;
   default: r = 0;
     printf("Selecione uma opcao valida \n\n");
   }
    menu();
 }
 
+// ====================          DONE            ====================//
 int handleLogin() {
   system("clear");
   printf("|-----------------------------------------------| \n");
