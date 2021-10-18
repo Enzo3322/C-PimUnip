@@ -19,7 +19,7 @@ char accommodationOfTeam[100];
 
 // ====================          DONE            ====================//
 int registerAthlete() {
-  system("clear");
+  //system("clear");
   printf("|-----------------------------------------------| \n");
   printf("|                                               | \n");
   printf("|              CADASTRO DE ATLETA               | \n");
@@ -44,7 +44,7 @@ int registerAthlete() {
 
 // ====================          TODO            ====================//
 int registerPosition() {
-  system("clear");
+  //system("clear");
   printf("|-----------------------------------------------| \n");
   printf("|                                               | \n");
   printf("|             CADASTRO DE MEDALHAS              | \n");
@@ -87,7 +87,7 @@ int registerPosition() {
 
 // ====================          DONE            ====================//
 int registerTeam() {
-  system("clear");
+  //system("clear");
   printf("|-----------------------------------------------| \n");
   printf("|                                               | \n");
   printf("|               CADASTRO DE EQUIPE              | \n");
@@ -127,12 +127,13 @@ int listAthlete() {
   printf("\t\t%s", originCountry);
   printf("\t%s", teamName);
   printf("\n\n");
+  getch();
   return 1;
 }
 
 // ====================          DONE            ====================//
 int listTeam() {
-  system("clear");
+  //system("clear");
   printf("|-----------------------------------------------| \n");
   printf("|                                               | \n");
   printf("|          LISTA DE EQUIPES CADASTRADA          | \n");
@@ -148,7 +149,7 @@ int listTeam() {
 
 // ====================          DONE            ====================//
 int menu() {
-  system("clear");
+  // //system("clear");
   printf("|-----------------------------------------------| \n");
   printf("|                                               | \n");
   printf("|        SOFTWARE DE GESTAO OLIMPIADAS          | \n");
@@ -189,7 +190,7 @@ int menu() {
 
 // ====================          DONE            ====================//
 int handleLogin() {
-  system("clear");
+  //system("clear");
   printf("|-----------------------------------------------| \n");
   printf("|                                               | \n");
   printf("|                     LOGIN                     | \n");
