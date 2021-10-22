@@ -162,8 +162,8 @@ int menu() {
   printf("|                                               | \n");
   printf("|    4 - Exibir Membros de Equipe Cadastrados   | \n");
   printf("|                                               | \n");
-  printf("|-----------------------------------------------| \n");
-  printf("Selecione uma opcao: ");
+  printf("|-----------------------------------------------| \n\n");
+  printf("   Selecione uma opcao: ");
   int r = 0;
   int selected;
   scanf("%i", & selected);
