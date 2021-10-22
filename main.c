@@ -1,7 +1,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
-#include <locale.h>
 
 // =========================== globals vars =================================//
 // variables with global scope to access valueof content: cadastro de atleta
@@ -81,51 +80,73 @@ int registerTeam() {
   return 1;
 }
 
-int listAthlete() {
- system("clear");
- system("cls");
-
-
-  printf("|---------------------------------------------------------------------------------------| \n");
-  printf("|                                                                                       | \n");
-  printf("|                              LISTA DE ATLETAS CADASTRADOS                             | \n");
-  printf("|                                                                                       | \n");
-  printf("|---------------------------------------------------------------------------------------| \n");
-  printf("|  NOME              MODALIDADE              PAIS                  EQUIPE               | \n");
-  printf("|  %s\t\t", name);
-  printf("%s\t\t", modality);
-  printf("%s\t\t", originCountry);
-  printf("%s\t\t|\n", teamName);
-  printf("\n\n");
+int registerPosition() {
+  system("clear");
+  system("cls");
+  printf("|-----------------------------------------------| \n");
+  printf("|                                               | \n");
+  printf("|               CADASTRO DE MEDALHAS            | \n");
+  printf("|                                               | \n");
+  printf("|-----------------------------------------------| \n");
+  printf("\nLocal de Treinamento: ");
+  scanf("%s", & trainingLocal);
+  printf("\n");
+  printf("Data do Treinamento: ");
+  scanf("%s", & trainingDate);
+  printf("\n");
+  printf("Local da Compenticao: ");
+  scanf("%s", & competitionPlace);
+  printf("\n");
+  printf("Equipamentos Necessarios: ");
+  scanf("%s", & outfit);
+  printf("\n");
+  printf("Alojamento da Delegacao: ");
+  scanf("%s", & accommodationOfTeam);
+  printf("\n");
+  printf("Pontuação cadastrada com Sucesso!\n\n");
   getch();
 
   return 1;
 }
 
-int listTeam() {
- system("clear");
- system("cls");
-
-
+int listAthlete() {
+  system("clear");
+  system("cls");
   printf("|-----------------------------------------------| \n");
   printf("|                                               | \n");
-  printf("|          LISTA DE EQUIPES CADASTRADA          | \n");
+  printf("|          LISTA DE ATLETA CADASTRADO           | \n");
   printf("|                                               | \n");
   printf("|-----------------------------------------------| \n");
-  printf("%s\n", trainingLocal);
-  printf("%s\n", trainingDate);
-  printf("%s\n", competitionPlace);
-  printf("%s\n", outfit);
-  printf("%s\n\n", accommodationOfTeam);
+  printf("| NOME: %s                                      | \n", name);
+  printf("| MODALIDADE: %s                                | \n", modality);
+  printf("| PAIS: %s                                      | \n", originCountry);
+  printf("| EQUIPE: %s                                    | \n", teamName);
+  printf("|-----------------------------------------------| \n\n");
   getch();
+  return 1;
+}
 
+int listTeam() {
+  system("clear");
+  system("cls");
+  printf("|-----------------------------------------------| \n");
+  printf("|                                               | \n");
+  printf("|          LISTA DE EQUIPE CADASTRADA           | \n");
+  printf("|                                               | \n");
+  printf("|-----------------------------------------------| \n");
+  printf("| LOCAL DE TREINO: %s                           | \n", trainingLocal);
+  printf("| DATA DE TREINAMENTO: %s                       | \n", trainingDate);
+  printf("| LOCAL DE COMPETICAO: %s                       | \n", competitionPlace);
+  printf("| EQUIPAMENTOS NECESSARIOS: %s                  | \n", outfit);
+  printf("| ALOJAMENTO: %s                                | \n", accommodationOfTeam);
+  printf("|-----------------------------------------------| \n");
+  getch();
+  return 1;
 }
 
 int menu() {
- system("clear");
- system("cls");
-
-
+  system("clear");
+  system("cls");
   printf("|-----------------------------------------------| \n");
   printf("|                                               | \n");
   printf("|        SOFTWARE DE GESTAO OLIMPIADAS          | \n");
@@ -142,6 +163,7 @@ int menu() {
   printf("|    4 - Exibir Membros de Equipe Cadastrados   | \n");
   printf("|                                               | \n");
   printf("|-----------------------------------------------| \n");
+  printf("Selecione uma opcao: ");
   int r = 0;
   int selected;
   scanf("%i", & selected);
@@ -161,15 +183,8 @@ int menu() {
 }
 
 int handleLogin() {
- system("clear");
- system("cls");
-
-
-   system("clear");
- system("cls");
-
-
-  setlocale(LC_ALL,"Portuguese");
+  system("clear");
+  system("cls");
   printf("|-----------------------------------------------| \n");
   printf("|                                               | \n");
   printf("|                     LOGIN                     | \n");
@@ -178,25 +193,27 @@ int handleLogin() {
   printf("|                                               | \n");
   printf("|      INSERIR USUARIO E SENHA PARA LOGAR       | \n");
   printf("|                                               | \n");
-  printf("|-----------------------------------------------| \n\n");
+  printf("|-----------------------------------------------| \n");
 
   char log[15] = "admin";
   char log1[15];
   char pw[15] = "admin";
   char pw1[15];
-  printf("Digite o Login: ");
+  printf("Login: ");
   scanf("%s", log1);
-  printf("Digite a Senha: ");
+  printf("Senha: ");
   scanf("%s", pw1);
 
   if (strcmp(log, log1) == 0 && strcmp(pw, pw1) == 0) {
     menu();
   } else {
-    printf("\n             DADOS INVALIDOS! TENTE NOVAMENTE\n\n");
+    printf("\n     DADOS INVALIDOS! TENTE NOVAMENTE\n\n");
+    getch();
     handleLogin();
 
   }
 }
+
 
 void main() {
   handleLogin();
