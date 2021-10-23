@@ -144,6 +144,31 @@ int listTeam() {
   return 1;
 }
 
+int createLog() {
+
+  FILE*relatorio;
+  relatorio = fopen("relatorio.txt", "w");
+
+  if (relatorio == NULL)
+    printf("ERRO: Nao foi possivel criar o arquivo");
+
+    fprintf(relatorio, "         RELATÓRIO       \n");
+
+    fprintf(relatorio, "Nome: %s \n", name);
+    fprintf(relatorio, "Modalidade: %s \n", modality);
+    fprintf(relatorio, "País de origem: %s \n", originCountry);
+    fprintf(relatorio, "Nome da equipe: %s \n", teamName);
+    fprintf(relatorio, "Local de treinamento: %s \n", trainingLocal);
+    fprintf(relatorio, "Data do treinamento: %s \n", trainingDate);
+    fprintf(relatorio, "Local da competição: %s \n", competitionPlace);
+    fprintf(relatorio, "Equipamento: %s \n", outfit);
+    fprintf(relatorio, "Alojamento: %s \n", accommodationOfTeam);
+
+    fclose(relatorio);
+
+  return 0;
+}
+
 int menu() {
   system("clear");
   system("cls");
@@ -162,6 +187,8 @@ int menu() {
   printf("|                                               | \n");
   printf("|    4 - Exibir Membros de Equipe Cadastrados   | \n");
   printf("|                                               | \n");
+  printf("|    5 - Gerar Relatorio                        | \n");
+  printf("|                                               | \n");
   printf("|-----------------------------------------------| \n\n");
   printf("   Selecione uma opcao: ");
   int r = 0;
@@ -175,6 +202,8 @@ int menu() {
   case 3: r = listAthlete();
     break;
   case 4: r = listTeam();
+    break;
+  case 5: r = createLog();
     break;
   default: r = 0;
     printf("Selecione uma opcao valida \n\n");
@@ -218,3 +247,4 @@ int handleLogin() {
 void main() {
   handleLogin();
 }
+
