@@ -152,17 +152,21 @@ int createLog() {
   if (relatorio == NULL)
     printf("ERRO: Nao foi possivel criar o arquivo");
 
-    fprintf(relatorio, "         RELATÓRIO       \n");
-
-    fprintf(relatorio, "Nome: %s \n", name);
-    fprintf(relatorio, "Modalidade: %s \n", modality);
-    fprintf(relatorio, "País de origem: %s \n", originCountry);
-    fprintf(relatorio, "Nome da equipe: %s \n", teamName);
-    fprintf(relatorio, "Local de treinamento: %s \n", trainingLocal);
-    fprintf(relatorio, "Data do treinamento: %s \n", trainingDate);
-    fprintf(relatorio, "Local da competição: %s \n", competitionPlace);
-    fprintf(relatorio, "Equipamento: %s \n", outfit);
-    fprintf(relatorio, "Alojamento: %s \n", accommodationOfTeam);
+  fprintf(relatorio, "|-----------------------------------------------| \n");
+  fprintf(relatorio, "|                                               | \n");
+  fprintf(relatorio, "|                    RELATORIO                  | \n");
+  fprintf(relatorio, "|                                               | \n");
+  fprintf(relatorio, "|-----------------------------------------------| \n");
+  fprintf(relatorio, "| Nome: %s \n", name);
+  fprintf(relatorio, "| Modalidade: %s \n", modality);
+  fprintf(relatorio, "| País de origem: %s \n", originCountry);
+  fprintf(relatorio, "| Nome da equipe: %s \n", teamName);
+  fprintf(relatorio, "| Local de treinamento: %s \n", trainingLocal);
+  fprintf(relatorio, "| Data do treinamento: %s \n", trainingDate);
+  fprintf(relatorio, "| Local da competição: %s \n", competitionPlace);
+  fprintf(relatorio, "| Equipamento: %s \n", outfit);
+  fprintf(relatorio, "| Alojamento: %s \n", accommodationOfTeam);
+  fprintf(relatorio, "|-----------------------------------------------| \n");
 
     fclose(relatorio);
 
