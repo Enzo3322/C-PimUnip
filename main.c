@@ -14,7 +14,7 @@ char trainingDate[100];
 char competitionPlace[100];
 char outfit[100];
 char accommodationOfTeam[100];
-// variables with global scope to access valueof content: cadastro de equipe
+// variables with global scope to access valueof content: cadastro de médicos
 char doctorCrm[100];
 char doctorName[100];
 char doctorDocument[100];
@@ -67,35 +67,6 @@ int registerTeam() {
 
   return 1;
 }
-
-// int registerPosition() {
-//   system("clear");
-//   system("cls");
-//   printf("|-----------------------------------------------| \n");
-//   printf("|                                               | \n");
-//   printf("|               CADASTRO DE MEDALHAS            | \n");
-//   printf("|                                               | \n");
-//   printf("|-----------------------------------------------| \n");
-//   printf("\nLocal de Treinamento: ");
-//   scanf("%s", & trainingLocal);
-//   printf("\n");
-//   printf("Data do Treinamento: ");
-//   scanf("%s", & trainingDate);
-//   printf("\n");
-//   printf("Local da Compenticao: ");
-//   scanf("%s", & competitionPlace);
-//   printf("\n");
-//   printf("Equipamentos Necessarios: ");
-//   scanf("%s", & outfit);
-//   printf("\n");
-//   printf("Alojamento da Delegacao: ");
-//   scanf("%s", & accommodationOfTeam);
-//   printf("\n");
-//   printf("Pontuação cadastrada com Sucesso!\n\n");
-//   getch();
-
-//   return 1;
-// }
 
 int RegisterDoctor() {
   system("clear");
