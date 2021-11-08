@@ -14,13 +14,16 @@ char trainingDate[100];
 char competitionPlace[100];
 char outfit[100];
 char accommodationOfTeam[100];
+// variables with global scope to access valueof content: cadastro de equipe
+char doctorCrm[100];
+char doctorName[100];
+char doctorDocument[100];
+char doctorArea[100];
 // ======================================================================= ===//
 
 int registerAthlete() {
  system("clear");
  system("cls");
-
-
   printf("|-----------------------------------------------|\n");
   printf("|                                               | \n");
   printf("|              CADASTRO DE ATLETA               | \n");
@@ -28,22 +31,15 @@ int registerAthlete() {
   printf("|-----------------------------------------------| \n");
   printf("|             *  EX: jane_doe  *                | \n");
   printf("|-----------------------------------------------| \n");
-
-  printf(" \n\n");
-
-  printf("Nome do Atleta: ");
+  printf("\n\nNome do Atleta: ");
   scanf("%s", &name);
-  printf("\n");
-  printf("Modalidade: ");
+  printf("\nModalidade: ");
   scanf("%s", & modality);
-  printf("\n");
-  printf("Pais de Origem: ");
+  printf("\nPais de Origem: ");
   scanf("%s", & originCountry);
-  printf("\n");
-  printf("Nome da Equipe Olimipica do atleta: ");
+  printf("\nNome da Equipe Olimipica do atleta: ");
   scanf("%s", & teamName);
-  printf("\n");
-  printf("Atleta Cadastrado com Sucesso!\n\n");
+  printf("\nAtleta Cadastrado com Sucesso!\n\n");
   getch();
   return 1;
 }
@@ -51,62 +47,74 @@ int registerAthlete() {
 int registerTeam() {
  system("clear");
  system("cls");
-
-
   printf("|-----------------------------------------------| \n");
   printf("|                                               | \n");
   printf("|               CADASTRO DE EQUIPE              | \n");
   printf("|                                               | \n");
   printf("|-----------------------------------------------| \n");
-  
   printf("\nLocal de Treinamento: ");
   scanf("%s", & trainingLocal);
-  printf("\n");
-  printf("Data do Treinamento: ");
+  printf("\nData do Treinamento: ");
   scanf("%s", & trainingDate);
-  printf("\n");
-  printf("Local da Compenticao: ");
+  printf("\nLocal da Compenticao: ");
   scanf("%s", & competitionPlace);
-  printf("\n");
-  printf("Equipamentos Necessarios: ");
+  printf("\nEquipamentos Necessarios: ");
   scanf("%s", & outfit);
-  printf("\n");
-  printf("Alojamento da Delegacao: ");
+  printf("\nAlojamento da Delegacao: ");
   scanf("%s", & accommodationOfTeam);
-  printf("\n");
-  printf("Equipe Cadastrado com Sucesso!\n\n");
+  printf("\nEquipe Cadastrado com Sucesso!\n\n");
   getch();
 
   return 1;
 }
 
-int registerPosition() {
+// int registerPosition() {
+//   system("clear");
+//   system("cls");
+//   printf("|-----------------------------------------------| \n");
+//   printf("|                                               | \n");
+//   printf("|               CADASTRO DE MEDALHAS            | \n");
+//   printf("|                                               | \n");
+//   printf("|-----------------------------------------------| \n");
+//   printf("\nLocal de Treinamento: ");
+//   scanf("%s", & trainingLocal);
+//   printf("\n");
+//   printf("Data do Treinamento: ");
+//   scanf("%s", & trainingDate);
+//   printf("\n");
+//   printf("Local da Compenticao: ");
+//   scanf("%s", & competitionPlace);
+//   printf("\n");
+//   printf("Equipamentos Necessarios: ");
+//   scanf("%s", & outfit);
+//   printf("\n");
+//   printf("Alojamento da Delegacao: ");
+//   scanf("%s", & accommodationOfTeam);
+//   printf("\n");
+//   printf("Pontuação cadastrada com Sucesso!\n\n");
+//   getch();
+
+//   return 1;
+// }
+
+int RegisterDoctor() {
   system("clear");
   system("cls");
   printf("|-----------------------------------------------| \n");
   printf("|                                               | \n");
-  printf("|               CADASTRO DE MEDALHAS            | \n");
+  printf("|               CADASTRO DE MEDICOS             | \n");
   printf("|                                               | \n");
   printf("|-----------------------------------------------| \n");
-  printf("\nLocal de Treinamento: ");
-  scanf("%s", & trainingLocal);
-  printf("\n");
-  printf("Data do Treinamento: ");
-  scanf("%s", & trainingDate);
-  printf("\n");
-  printf("Local da Compenticao: ");
-  scanf("%s", & competitionPlace);
-  printf("\n");
-  printf("Equipamentos Necessarios: ");
-  scanf("%s", & outfit);
-  printf("\n");
-  printf("Alojamento da Delegacao: ");
-  scanf("%s", & accommodationOfTeam);
-  printf("\n");
-  printf("Pontuação cadastrada com Sucesso!\n\n");
+  printf("\nCRM:: ");
+  scanf("%s", & doctorCrm);
+  printf("\nNome: ");
+  scanf("%s", & doctorName);
+  printf("\nRG ou CPF: ");
+  scanf("%s", & doctorDocument);
+  printf("\nEspecialidade: ");
+  scanf("%s", & doctorArea);
+  printf("\nMedico cadastrado com Sucesso!\n\n");
   getch();
-
-  return 1;
 }
 
 int listAthlete() {
@@ -114,13 +122,13 @@ int listAthlete() {
   system("cls");
   printf("|-----------------------------------------------| \n");
   printf("|                                               | \n");
-  printf("|          LISTA DE ATLETA CADASTRADO           | \n");
+  printf("|          LISTA DE ATLETAS CADASTRADOS         | \n");
   printf("|                                               | \n");
   printf("|-----------------------------------------------| \n");
-  printf("| NOME: %s                                      | \n", name);
-  printf("| MODALIDADE: %s                                | \n", modality);
-  printf("| PAIS: %s                                      | \n", originCountry);
-  printf("| EQUIPE: %s                                    | \n", teamName);
+  printf("| NOME: %s                                        \n", name);
+  printf("| MODALIDADE: %s                                  \n", modality);
+  printf("| PAIS: %s                                        \n", originCountry);
+  printf("| EQUIPE: %s                                      \n", teamName);
   printf("|-----------------------------------------------| \n\n");
   getch();
   return 1;
@@ -131,21 +139,37 @@ int listTeam() {
   system("cls");
   printf("|-----------------------------------------------| \n");
   printf("|                                               | \n");
-  printf("|          LISTA DE EQUIPE CADASTRADA           | \n");
+  printf("|          LISTA DE EQUIPES CADASTRADAS         | \n");
   printf("|                                               | \n");
   printf("|-----------------------------------------------| \n");
-  printf("| LOCAL DE TREINO: %s                           | \n", trainingLocal);
-  printf("| DATA DE TREINAMENTO: %s                       | \n", trainingDate);
-  printf("| LOCAL DE COMPETICAO: %s                       | \n", competitionPlace);
-  printf("| EQUIPAMENTOS NECESSARIOS: %s                  | \n", outfit);
-  printf("| ALOJAMENTO: %s                                | \n", accommodationOfTeam);
+  printf("| LOCAL DE TREINO: %s                             \n", trainingLocal);
+  printf("| DATA DE TREINAMENTO: %s                         \n", trainingDate);
+  printf("| LOCAL DE COMPETICAO: %s                         \n", competitionPlace);
+  printf("| EQUIPAMENTOS NECESSARIOS: %s                    \n", outfit);
+  printf("| ALOJAMENTO: %s                                  \n", accommodationOfTeam);
   printf("|-----------------------------------------------| \n");
   getch();
   return 1;
 }
 
-int createLog() {
+int listDoctor() {
+  system("clear");
+  system("cls");
+  printf("|-----------------------------------------------| \n");
+  printf("|                                               | \n");
+  printf("|          LISTA DE MEDICOS CADASTRADOS         | \n");
+  printf("|                                               | \n");
+  printf("|-----------------------------------------------| \n");
+  printf("| NOME: %s                                        \n", doctorName);
+  printf("| CRM: %s                                         \n", doctorCrm);
+  printf("| DOCUMENTO: %s                                   \n", doctorDocument);
+  printf("| ESPECIALIDADE: %s                               \n", doctorArea);
+  printf("|-----------------------------------------------| \n\n");
+  getch();
+  return 1;
+}
 
+int createLog() {
   FILE*relatorio;
   relatorio = fopen("relatorio.txt", "w");
 
@@ -185,13 +209,17 @@ int menu() {
   printf("|                                               | \n");
   printf("|    1 - Cadastrar Atletas                      | \n");
   printf("|                                               | \n");
-  printf("|    2 - Cadastrar Cadastrar Equipe             | \n");
+  printf("|    2 - Cadastrar Equipe                       | \n");
   printf("|                                               | \n");
-  printf("|    3 - Exibir Atletas Cadastrados             | \n");
+  printf("|    3 - Cadastrar Medicos                      | \n");
   printf("|                                               | \n");
-  printf("|    4 - Exibir Membros de Equipe Cadastrados   | \n");
+  printf("|    4 - Exibir Atletas Cadastrados             | \n");
   printf("|                                               | \n");
-  printf("|    5 - Gerar Relatorio                        | \n");
+  printf("|    5 - Exibir Membros de Equipe Cadastrados   | \n");
+  printf("|                                               | \n");
+  printf("|    6 - Exibir Medicos Cadastrados             | \n");
+  printf("|                                               | \n");
+  printf("|    7 - Gerar Relatorio                        | \n");
   printf("|                                               | \n");
   printf("|-----------------------------------------------| \n\n");
   printf("   Selecione uma opcao: ");
@@ -203,11 +231,15 @@ int menu() {
     break;
   case 2: r = registerTeam();
     break;
-  case 3: r = listAthlete();
+  case 3: r = handleLoginDoctor();
+    break;  
+  case 4: r = listAthlete();
     break;
-  case 4: r = listTeam();
+  case 5: r = listTeam();
     break;
-  case 5: r = createLog();
+  case 6: r = listDoctor();
+    break;
+  case 7: r = createLog();
     break;
   default: r = 0;
     printf("Selecione uma opcao valida \n\n");
@@ -247,6 +279,34 @@ int handleLogin() {
   }
 }
 
+int handleLoginDoctor() {
+  system("clear");
+  system("cls");
+  printf("|-----------------------------------------------| \n");
+  printf("|                                               | \n");
+  printf("|               CADASTRO DE MEDICOS             | \n");
+  printf("|                                               | \n");
+  printf("|-----------------------------------------------| \n");
+  printf("|                                               | \n");
+  printf("|    NECESSARIO LOGIN E SENHA PARA CADASTRO     | \n");
+  printf("|                                               | \n");
+  printf("|-----------------------------------------------| \n");
+  char log[15] = "doctor";
+  char log1[15];
+  char pw[15] = "doctor";
+  char pw1[15];
+  printf("Login: ");
+  scanf("%s", log1);
+  printf("Senha: ");
+  scanf("%s", pw1);
+  if (strcmp(log, log1) == 0 && strcmp(pw, pw1) == 0) {
+    RegisterDoctor();
+  } else {
+    printf("\n     DADOS INVALIDOS! TENTE NOVAMENTE\n\n");
+    getch();
+    handleLogin();
+  }
+}
 
 void main() {
   handleLogin();
